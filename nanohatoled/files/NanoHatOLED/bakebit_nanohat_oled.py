@@ -171,16 +171,16 @@ def draw_page():
     if page_index==0:
         text = time.strftime("%a %e %b %Y")
         draw.text((2,2),text,font=font14,fill=255)
-        year=time.strftime('%Y')
-        now=time.time()
-        start_date=time.mktime(time.strptime(year, '%Y'))
-        end_date=time.mktime(time.strptime(str(int(year)+1), '%Y'))
-        percent=int((now-start_date)/(end_date-start_date)*1000)/10.0
-        bar = int(round(percent/10, 0))
+        year = time.strftime('%Y')
+        now  = time.time()
+        start_date = time.mktime(time.strptime(year, '%Y'))
+        end_date   = time.mktime(time.strptime(str(int(year)+1), '%Y'))
+        percent    = int((now-start_date)/(end_date-start_date)*1000)/10.0
+        bar  = int(round(percent/10, 0))
         text = bar * u'\u2593' + (10 - bar) * u'\u2591' + str(percent) + '%'
-        draw.text((2,20),text,font=font14,fill=255)
+        draw.text((2,20),text, font=font14,  fill=255)
         text = time.strftime("%X")
-        draw.text((8,38),text,font=fontb24,fill=255)
+        draw.text((8,38),text, font=fontb24, fill=255)
     elif page_index==1:
         # Draw some shapes.
         # First define some constants to allow easy resizing of shapes.
@@ -207,7 +207,7 @@ def draw_page():
         draw.text((x+2, top),       "IP: " + str(IPAddress),  font=smartFont, fill=255)
         draw.text((x+2, top+12),    str(CPU), font=smartFont, fill=255)
         draw.text((x+2, top+24),    str(MemUsage),  font=smartFont, fill=255)
-        draw.text((x+2, top+36),    str(Disk),  font=smartFont, fill=255)
+        draw.text((x+2, top+36),    str(Disk), font=smartFont, fill=255)
         draw.text((x+2, top+48),    tempStr,   font=smartFont, fill=255)
     elif page_index==3: #shutdown -- no
         draw.text((2, 2),  'Shutdown?',  font=fontb14, fill=255)

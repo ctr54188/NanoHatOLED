@@ -38,8 +38,34 @@ src-git NanoHatOLED https://github.com/vinewx/NanoHatOLED.git^e3285a3b37c7c34048
 # Extra packages -> nanohatoled
 make menuconfig
 ```
-## Thanks / 谢致
-Based on: 
-- [friendlyarm/NanoHatOLED](https://github.com/friendlyarm/NanoHatOLED) 
+
+## [Enable weather info / 显示天气](https://github.com/vinewx/NanoHatOLED/tree/weather) (Python3)
+<img src="https://github.com/vinewx/NanoHatOLED/raw/weather/assets/k2_1.jpg" width="200" />
+
+- 按压一次`F2`: 天气信息
+- 再次按压`F2`: 系统信息
+
+地区编码查询 -> [citycode.json](https://github.com/vinewx/NanoHatOLED/blob/weather/citycode.json)
+
+```bash
+# For depends / 安装依赖
+opkg update && opkg install python3-requests
+cd /usr/share/NanoHatOLED
+wget -O Zpix.ttf https://github.com/vinewx/NanoHatOLED/raw/weather/nanohatoled/files/NanoHatOLED/Zpix.ttf
+wget -O bakebit_nanohat_oled.py https://github.com/vinewx/NanoHatOLED/raw/weather/nanohatoled/files/NanoHatOLED/bakebit_nanohat_oled.py
+
+# 先修改地区编码，再执行命令
+# 例如：sed -i 's/101010100/101020100/g' bakebit_nanohat_oled.py
+sed -i 's/101010100/修改为九位地区编码/g' bakebit_nanohat_oled.py
+
+/etc/init.d/nanohatoled restart
+```
+
+
+## Thanks / 谢致 
+- Based on: [friendlyarm/NanoHatOLED](https://github.com/friendlyarm/NanoHatOLED)
+- [Weather API](https://www.sojson.com/api/weather.html)
+- [zpix-pixel-font](https://github.com/SolidZORO/zpix-pixel-font)
+
 
 <img src="https://github.com/vinewx/NanoHatOLED/raw/master/assets/k1.jpg" width="250" /> <img src="https://github.com/vinewx/NanoHatOLED/raw/master/assets/k2.jpg" width="250" /> <img src="https://github.com/vinewx/NanoHatOLED/raw/master/assets/k3.jpg" width="250" />
