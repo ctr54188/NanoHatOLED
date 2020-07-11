@@ -66,6 +66,7 @@ sed -i 's/101010100/修改为九位地区编码/g' bakebit_nanohat_oled.py
 - Based on: [friendlyarm/NanoHatOLED](https://github.com/friendlyarm/NanoHatOLED)
 - [Weather API](https://www.sojson.com/api/weather.html)
 - [zpix-pixel-font](https://github.com/SolidZORO/zpix-pixel-font)
+- ![caiyun](http://caiyunapp.com/imgs/logo/logo-website.png)
 
 
 <img src="https://github.com/vinewx/NanoHatOLED/raw/master/assets/k1.jpg" width="250" /> <img src="https://github.com/vinewx/NanoHatOLED/raw/master/assets/k2.jpg" width="250" /> <img src="https://github.com/vinewx/NanoHatOLED/raw/master/assets/k3.jpg" width="250" />
