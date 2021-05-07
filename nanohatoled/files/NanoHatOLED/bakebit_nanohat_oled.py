@@ -199,10 +199,11 @@ def draw_page():
         MemUsage = subprocess.check_output(cmd, shell = True ).decode("utf-8", errors="ignore")
         cmd = "df -h | awk '$NF==\"/\"{printf \"Disk: %d/%dGB %s\", $3,$2,$5}'"
         Disk = subprocess.check_output(cmd, shell = True ).decode("utf-8", errors="ignore")
-        tempI = int(open('/sys/class/thermal/thermal_zone0/temp').read());
-        if tempI>1000:
-            tempI = tempI/1000
-        tempStr = u"CPU TEMP: %s\u00b0C" % int(tempI)
+        # tempI = int(open('/sys/class/thermal/thermal_zone0/temp').read());
+        # if tempI>1000:
+        #     tempI = tempI/1000
+        # tempStr = u"CPU TEMP: %s\u00b0C" % int(tempI)
+        tempStr = ""
 
         draw.text((x+2, top),       "IP: " + str(IPAddress),  font=smartFont, fill=255)
         draw.text((x+2, top+12),    str(CPU), font=smartFont, fill=255)
