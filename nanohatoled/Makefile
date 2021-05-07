@@ -37,7 +37,7 @@ include $(INCLUDE_DIR)/package.mk
 define Package/$(PKG_NAME)
 	TITLE:=Support for NanoHatOLED.
 	PKGARCH:=all
-	DEPENDS:=+i2c-tools +python3-pillow +python3-smbus
+	DEPENDS:=+kmod-i2c-gpio +i2c-tools +python3-pillow +python3-smbus
 endef
 
 define Package/$(PKG_NAME)/description
