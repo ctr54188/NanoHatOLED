@@ -197,7 +197,7 @@ def draw_page():
         CPU = subprocess.check_output(cmd, shell = True ).decode("utf-8", errors="ignore")
         cmd = "free -m | awk 'NR==2{printf \"Mem: %s/%sMB %.1f%%\", int($3/1024),int($2/1024),$3*100/$2 }'"
         MemUsage = subprocess.check_output(cmd, shell = True ).decode("utf-8", errors="ignore")
-        cmd = "df -h | awk '$NF==\"/\"{printf \"Disk: %d/%dGB %s\", $3,$2,$5}'"
+        cmd = "df -h | awk '$NF==\"/\"{printf \"Disk: %s/%s %s\", $3,$2,$5}'"
         Disk = subprocess.check_output(cmd, shell = True ).decode("utf-8", errors="ignore")
         # tempI = int(open('/sys/class/thermal/thermal_zone0/temp').read());
         # if tempI>1000:
